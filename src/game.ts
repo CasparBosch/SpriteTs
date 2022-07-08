@@ -1,8 +1,5 @@
 import * as PIXI from 'pixi.js'
 
-import backgroundImage from "./images/bggif21.gif"
-
-
 export class Game {
     pixi: PIXI.Application
     loader: PIXI.Loader
