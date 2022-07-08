@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js'
 
-import backgroundImage from "./images/background3.png"
+import backgroundImage from "./images/bggif21.gif"
 
 
 export class Game {
@@ -17,8 +17,7 @@ export class Game {
 
         // preload all our textures
         this.pixi.loader = new PIXI.Loader()
-            .add('backgroundImage', backgroundImage)
-        // .add("spritesheetbg5", "spritesheetbg5.json")
+            .add("spritesheet5", "spritesheet5(1).json")
         this.pixi.loader.load(() => this.loadCompleted())
     }
 
@@ -26,31 +25,31 @@ export class Game {
         let background = new PIXI.Sprite(this.pixi.loader.resources["backgroundImage"].texture!)
         this.pixi.stage.addChild(background)
 
-        // for (let i = 0; i < 21; i++) {
-        //     const texture = PIXI.Texture.from(`spritesheet5 ${i + 1}.png`)
-        //     this.backgroundTextures.push(texture)
-        // }
+        for (let i = 0; i < 21; i++) {
+            const texture = PIXI.Texture.from(`spritesheet5 ${i + 1}.png`)
+            this.backgroundTextures.push(texture)
+        }
 
-        // createBackground(),{}
+        this.createBackground(), {}
 
         this.pixi.ticker.add((delta: number) => this.update(delta))
     }
 
-    // createBackground() {
-    //     const background = new PIXI.AnimatedSprite(this.backgroundTextures)
-    //     // kaboom.x = 100
-    //     // kaboom.y = 100
-    //     // kaboom.anchor.set(0.5)
-    //     background.play()
-    //     this.pixi.stage.addChild(background)
-    // }
+    createBackground() {
+        const background = new PIXI.AnimatedSprite(this.backgroundTextures)
+        background.x = 100
+        background.y = 100
+        background.anchor.set(0.5)
+        background.play()
+        this.pixi.stage.addChild(background)
+    }
 
-    //update
+    // update
     private update(delta: number) {
 
     }
 
-   
+
 
 }
 

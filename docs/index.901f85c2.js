@@ -507,8 +507,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Game", ()=>Game);
 var _pixiJs = require("pixi.js");
-var _background3Png = require("./images/background3.png");
-var _background3PngDefault = parcelHelpers.interopDefault(_background3Png);
 class Game {
     backgroundTextures = [];
     constructor(){
@@ -519,34 +517,33 @@ class Game {
         });
         document.body.appendChild(this.pixi.view);
         // preload all our textures
-        this.pixi.loader = new _pixiJs.Loader().add("backgroundImage", (0, _background3PngDefault.default));
-        // .add("spritesheetbg5", "spritesheetbg5.json")
+        this.pixi.loader = new _pixiJs.Loader().add("spritesheet5", "spritesheet5(1).json");
         this.pixi.loader.load(()=>this.loadCompleted());
     }
     loadCompleted() {
         let background = new _pixiJs.Sprite(this.pixi.loader.resources["backgroundImage"].texture);
         this.pixi.stage.addChild(background);
-        // for (let i = 0; i < 21; i++) {
-        //     const texture = PIXI.Texture.from(`spritesheet5 ${i + 1}.png`)
-        //     this.backgroundTextures.push(texture)
-        // }
-        // createBackground(),{}
+        for(let i = 0; i < 21; i++){
+            const texture = _pixiJs.Texture.from(`spritesheet5 ${i + 1}.png`);
+            this.backgroundTextures.push(texture);
+        }
+        this.createBackground();
         this.pixi.ticker.add((delta)=>this.update(delta));
     }
-    // createBackground() {
-    //     const background = new PIXI.AnimatedSprite(this.backgroundTextures)
-    //     // kaboom.x = 100
-    //     // kaboom.y = 100
-    //     // kaboom.anchor.set(0.5)
-    //     background.play()
-    //     this.pixi.stage.addChild(background)
-    // }
-    //update
+    createBackground() {
+        const background = new _pixiJs.AnimatedSprite(this.backgroundTextures);
+        background.x = 100;
+        background.y = 100;
+        background.anchor.set(0.5);
+        background.play();
+        this.pixi.stage.addChild(background);
+    }
+    // update
     update(delta) {}
 }
 new Game();
 
-},{"pixi.js":"dsYej","./images/background3.png":"jKWBM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils);
@@ -38497,43 +38494,6 @@ function __extends(d, b) {
     return AnimatedSprite1;
 }((0, _sprite.Sprite));
 
-},{"@pixi/core":"7PEF8","@pixi/sprite":"9mbxh","@pixi/ticker":"8ekG7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jKWBM":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("emE5o") + "background3.ed8c7e74.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}]},["5C4RD","edeGs"], "edeGs", "parcelRequire94c2")
+},{"@pixi/core":"7PEF8","@pixi/sprite":"9mbxh","@pixi/ticker":"8ekG7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5C4RD","edeGs"], "edeGs", "parcelRequire94c2")
 
 //# sourceMappingURL=index.901f85c2.js.map
