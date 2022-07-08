@@ -26,7 +26,7 @@ export class Game {
         this.pixi.stage.addChild(background)
 
         for (let i = 0; i < 21; i++) {
-            const texture = PIXI.Texture.from(`spritesheet5 ${i + 1}.png`)
+            const texture = PIXI.Texture.from(`spritesheet5(1) ${i + 1}.png`)
             this.backgroundTextures.push(texture)
         }
 
@@ -37,9 +37,9 @@ export class Game {
 
     createBackground() {
         const background = new PIXI.AnimatedSprite(this.backgroundTextures)
-        background.x = 100
-        background.y = 100
-        background.anchor.set(0.5)
+        // background.x = 100
+        // background.y = 100
+        // background.anchor.set(0.5)
         background.play()
         this.pixi.stage.addChild(background)
     }

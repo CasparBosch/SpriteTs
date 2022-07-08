@@ -524,7 +524,7 @@ class Game {
         let background = new _pixiJs.Sprite(this.pixi.loader.resources["backgroundImage"].texture);
         this.pixi.stage.addChild(background);
         for(let i = 0; i < 21; i++){
-            const texture = _pixiJs.Texture.from(`spritesheet5 ${i + 1}.png`);
+            const texture = _pixiJs.Texture.from(`spritesheet5(1) ${i + 1}.png`);
             this.backgroundTextures.push(texture);
         }
         this.createBackground();
@@ -532,9 +532,9 @@ class Game {
     }
     createBackground() {
         const background = new _pixiJs.AnimatedSprite(this.backgroundTextures);
-        background.x = 100;
-        background.y = 100;
-        background.anchor.set(0.5);
+        // background.x = 100
+        // background.y = 100
+        // background.anchor.set(0.5)
         background.play();
         this.pixi.stage.addChild(background);
     }

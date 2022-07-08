@@ -190,7 +190,7 @@
 	"anchor": {"x":0.5,"y":0.5}
 }},
 "animations": {
-	"spritesheet5(1)": ["spritesheet5(1)_01.png","spritesheet5(1)_02.png","spritesheet5(1)_03.png","spritesheet5(1)_04.png","spritesheet5(1)_05.png","spritesheet5(1)_06.png","spritesheet5(1)_07.png","spritesheet5(1)_08.png","spritesheet5(1)_09.png","spritesheet5(1)_10.png","spritesheet5(1)_11.png","spritesheet5(1)_12.png","spritesheet5(1)_13.png","spritesheet5(1)_14.png","spritesheet5(1)_15.png","spritesheet5(1)_16.png","spritesheet5(1)_17.png","spritesheet5(1)_18.png","spritesheet5(1)_19.png","spritesheet5(1)_20.png","spritesheet5(1)_21.png"]
+	"spritesheet5(1)": ["spritesheet5(1) 1.png","spritesheet5(1) 2.png","spritesheet5(1) 3.png","spritesheet5(1) 4.png","spritesheet5(1) 5.png","spritesheet5(1) 6.png","spritesheet5(1) 7.png","spritesheet5(1) 8.png","spritesheet5(1) 9.png","spritesheet5(1) 10.png","spritesheet5(1) 11.png","spritesheet5(1) 12.png","spritesheet5(1) 13.png","spritesheet5(1) 14.png","spritesheet5(1) 15.png","spritesheet5(1) 16.png","spritesheet5(1) 17.png","spritesheet5(1) 18.png","spritesheet5(1) 19.png","spritesheet5(1) 20.png","spritesheet5(1) 21.png"]
 },
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
