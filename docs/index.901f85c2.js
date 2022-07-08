@@ -532,9 +532,9 @@ class Game {
     }
     createBackground() {
         const background = new _pixiJs.AnimatedSprite(this.backgroundTextures);
-        // background.x = 100
-        // background.y = 100
-        // background.anchor.set(0.5)
+        background.x = 100;
+        background.y = 100;
+        background.anchor.set(0.5);
         background.play();
         this.pixi.stage.addChild(background);
     }
