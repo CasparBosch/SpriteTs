@@ -521,13 +521,16 @@ class Game {
         this.pixi.loader.load(()=>this.loadCompleted());
     }
     loadCompleted() {
-        let background = new _pixiJs.Sprite(this.pixi.loader.resources["backgroundImage"].texture);
-        this.pixi.stage.addChild(background);
         for(let i = 0; i < 21; i++){
             const texture = _pixiJs.Texture.from(`spritesheet5(1) ${i + 1}.png`);
             this.backgroundTextures.push(texture);
         }
-        this.createBackground();
+        // this.createBackground(), {}
+        let background = new _pixiJs.AnimatedSprite(this.backgroundTextures);
+        background.scale.set(window.innerWidth / background.getBounds().width, window.innerHeight / background.getBounds().height);
+        this.pixi.stage.addChild(background);
+        background.animationSpeed = 0.15;
+        background.play();
         this.pixi.ticker.add((delta)=>this.update(delta));
     }
     createBackground() {
