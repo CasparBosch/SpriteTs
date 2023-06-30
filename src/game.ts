@@ -56,6 +56,4 @@ export class Game {
 
 }
 
-
-
 new Game()

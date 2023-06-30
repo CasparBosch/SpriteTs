@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@pixi/app": "^7.2.4",
     "pixi.js": "^6.4.2"
   },
   "devDependencies": {
